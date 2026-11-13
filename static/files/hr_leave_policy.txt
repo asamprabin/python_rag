@@ -1,0 +1,17 @@
+Document ID: DOC002
+Title: Employee Leave and Remote Work Policy
+Department: hr
+Category: policy
+Version: 1.0
+
+Full-time employees receive 20 days of paid annual leave per calendar year. Annual leave requests must be submitted through the HR portal at least five working days in advance, except in emergencies. Managers approve leave based on team coverage.
+
+Employees receive 10 days of paid sick leave per calendar year. For sick leave lasting more than two consecutive working days, employees must submit a medical certificate to HR.
+
+Employees may work remotely up to three days per week with manager approval. Remote work requests should be entered in the HR portal before the start of the workweek. The standard working hours are 9:30 AM to 6:00 PM, Monday through Friday, with a one-hour lunch break.
+
+Unused annual leave: up to five days can be carried forward into the next calendar year. Any additional unused days expire at year-end. Sick leave cannot be carried forward.
+
+Employees should contact hr@example.com for questions about leave balances or policy exceptions. This address is fictional and is included only for testing.
+
+The document_id for this policy is DOC002. When indexing this file, attach metadata department=hr and category=policy so that HR queries can be filtered independently of engineering documents.

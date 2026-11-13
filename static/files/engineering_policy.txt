@@ -1,0 +1,17 @@
+Document ID: DOC001
+Title: Engineering Architecture and Security Policy
+Department: engineering
+Category: technical
+Version: 1.0
+
+The engineering team uses Python and Node.js for backend services. APIs are deployed as containerized services. PostgreSQL stores transactional records, while ChromaDB stores embeddings for internal document search.
+
+RAG ingestion process: extract text from source documents, split the text into overlapping chunks of approximately 400 words with 80 words of overlap, generate embeddings using the same model used for querying, and store each chunk with its original text and metadata in ChromaDB.
+
+Required metadata for each chunk includes document_id, department, category, version, source_file, and chunk_index. The document_id for this policy is DOC001. Metadata must be supplied during insertion and checked during retrieval. Production retrieval must enforce tenant_id and authorized access groups on the server; client-provided filters alone are not sufficient authorization.
+
+Retrieval uses metadata filtering before similarity ranking. For engineering questions, filter department to engineering. The system initially retrieves the top five chunks and may rerank them before sending context to the LLM.
+
+RAG evaluation tracks Precision@5, Recall@5, answer correctness, and faithfulness. The engineering target is at least 90 percent Recall@5 on a labeled evaluation dataset. Evaluation results should be compared against a fixed benchmark before deployments.
+
+Secrets and API keys must never be stored in source documents or vector database metadata. Access to indexed documents is logged for auditing.
